@@ -1,0 +1,9 @@
+<div class="addCard">
+
+    <input type="text" #newTodo />
+    <button (click)="addTodo(newTodo)">Submit</button>
+</div>
+<div class="todos" *ngFor="let todo of todos"> 
+    <h2>-Name: {{todo.name}}</h2>
+    <h2>{{todo.completed}}</h2>
+ </div>

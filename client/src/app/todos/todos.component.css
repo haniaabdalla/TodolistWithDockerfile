@@ -1,0 +1,32 @@
+.addCard {
+    background-color: brown;
+    font-weight: 400;
+    color: aliceblue;
+    border-radius: 4px;
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+}
+
+.addCard input {
+    width: 20%;
+    height: 30px;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding-left: 20px;
+}
+
+.addCard button {
+    width: 10%;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.todos {
+    background-color: white;
+    border-radius: 5px;
+    text-align: left;
+    margin-top: 25px;
+    align-items: left;
+}
