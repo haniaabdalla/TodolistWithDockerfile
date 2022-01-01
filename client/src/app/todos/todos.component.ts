@@ -18,12 +18,12 @@ export class TodosComponent implements OnInit {
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit(): void {
-    this.getTodo();
+    this.getTodos();
   }
 
-  async getTodo() {
+  async getTodos() {
     this.httpClient
-      .get<any>('http://localhost:3000/getTodos')
+      .get<any>('http://localhost:3000/Todos')
       .subscribe((todos) => {
         this.todos = todos;
       });
@@ -34,27 +34,27 @@ export class TodosComponent implements OnInit {
       return;
     } else {
       this.httpClient
-        .post<any>('http://localhost:3000/addTodo', {
+        .post<any>('http://localhost:3000/Todos', {
           desc: todo.value,
         })
         .subscribe(() => {});
     }
   }
-  // updateTodo(id: Number, newText: HTMLInputElement) {
-  //   this.httpClient
-  //     .put<any>(`http://localhost:5001/updateTodo/${id}`, {
-  //       newText: newText.value,
-  //       id: id,
-  //     })
-  //     .subscribe((todo) => {
-  //       this.getTodo();
-  //     });
-  // }
-  // deleteTodo(id: number) {
-  //   this.httpClient
-  //     .delete<any>(`http://localhost:5001/deleteTodo/${id}`)
-  //     .subscribe((todo) => {
-  //       this.getTodo();
-  //     });
-  // }
+  deleteTodo(id:string) {
+    this.httpClient
+      .delete<any>('http://localhost:3000/deleteTodo/${id}')
+      .subscribe((todo) => {
+        this.getTodos();
+      })
+  }
+   updateTodo(id: string, text: HTMLInputElement) {
+    this.httpClient
+      .put<any>('http://localhost:3000/updateTodo/${id}', {
+        id: id,
+        text: text.value,
+      })
+      .subscribe((todo) => {
+        this.getTodos();
+      });
+  }
 }

@@ -1,9 +1,14 @@
-<div class="addCard">
 
-    <input type="text" #newTodo />
-    <button (click)="addTodo(newTodo)">Submit</button>
-</div>
-<div class="todos" *ngFor="let todo of todos"> 
-    <h2>-Name: {{todo.name}}</h2>
-    <h2>{{todo.completed}}</h2>
- </div>
+    <div class="addCard">
+        <p class="card-text">Add Todo</p>
+        <input type="text" #newTodo /><br><br>
+        <button (click)="addTodo(newTodo)">Add</button>
+    </div>
+    <div class="card text-center" *ngFor="let todo of todos">
+        <div class="card-body">
+            <p class="card-text">{{todo.name}}</p>
+            <input type="text" #text /><br><br>
+            <button (click)="updateTodo(todo._id,text)" class="btn btn-primary">Update</button>
+            <button (click)="deleteTodo(todo._id)" class="btn btn-primary">Delete</button><br>
+        </div>
+    </div>

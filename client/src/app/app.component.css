@@ -4,7 +4,7 @@
 }
 
 .header {
-    background-color: brown;
+    background-color: darkslategray;
     font-weight: 300;
     padding: 20px;
     color: aliceblue;
@@ -12,7 +12,7 @@
     border-radius: 5px;
 }
 .footer {
-    background-color: brown;
+    background-color: darkslategray;
     font-weight: 300;
     padding: 20px;
     color: aliceblue;

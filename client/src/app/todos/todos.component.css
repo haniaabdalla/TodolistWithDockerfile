@@ -1,5 +1,5 @@
 .addCard {
-    background-color: brown;
+    background-color: darkslategray;
     font-weight: 400;
     color: aliceblue;
     border-radius: 4px;
@@ -7,22 +7,21 @@
     margin: 10px;
     padding: 5px;
 }
-
+body{
+    text-align: center;
+}
 .addCard input {
     width: 20%;
-    height: 30px;
-    border-radius: 5px;
+    height: 20px;
     margin-right: 10px;
     padding-left: 20px;
 }
-
 .addCard button {
-    width: 10%;
-    height: 30px;
+    width: 50px;
+    height: 25px;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 14px;
 }
-
 .todos {
     background-color: white;
     border-radius: 5px;
