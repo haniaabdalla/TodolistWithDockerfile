@@ -2,8 +2,9 @@ import mongoose from "mongoose";
 const DataBaseconnection = async() => {
 
 
+    var dburl=mongoose.connect('mongodb://hania:omar@'+process.env.IP+':27017/dbtodos?directConnection=true&serverSelectionTimeoutMS=2000')
     await mongoose.connect(
-        "mongodb+srv://haniaomar:haniaomar@cluster.24wbf.mongodb.net/todos?retryWrites=true&w=majority", {
+        dburl, {
             useNewUrlParser: true,
             useCreateIndex: true,
             useUnifiedTopology: true,
