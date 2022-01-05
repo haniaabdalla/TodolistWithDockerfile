@@ -23,7 +23,7 @@ export class TodosComponent implements OnInit {
 
   async getTodos() {
     this.httpClient
-      .get<any>('http://backend-todoapp3.apps.eu45.prod.nextcle.com/Todos')
+      .get<any>('http://backend-toolsss.apps.eu45.prod.nextcle.com')
       .subscribe((todos) => {
         this.todos = todos;
       });
