@@ -23,7 +23,7 @@ export class TodosComponent implements OnInit {
 
   async getTodos() {
     this.httpClient
-      .get<any>('http://localhost:3000/Todos')
+      .get<any>('http://backend-todoapp3.apps.eu45.prod.nextcle.com/Todos')
       .subscribe((todos) => {
         this.todos = todos;
       });
@@ -34,7 +34,7 @@ export class TodosComponent implements OnInit {
       return;
     } else {
       this.httpClient
-        .post<any>('http://localhost:3000/Todos', {
+        .post<any>('http://backend-todoapp3.apps.eu45.prod.nextcle.com/Todos', {
           desc: todo.value,
         })
         .subscribe(() => {});
@@ -42,14 +42,14 @@ export class TodosComponent implements OnInit {
   }
   deleteTodo(id:string) {
     this.httpClient
-      .delete<any>('http://localhost:3000/deleteTodo/${id}')
+      .delete<any>(`http://backend-todoapp3.apps.eu45.prod.nextcle.com/deleteTodo/${id}`)
       .subscribe((todo) => {
         this.getTodos();
       })
   }
    updateTodo(id: string, text: HTMLInputElement) {
     this.httpClient
-      .put<any>('http://localhost:3000/updateTodo/${id}', {
+      .put<any>(`http://backend-todoapp3.apps.eu45.prod.nextcle.com/updateTodo/${id}`, {
         id: id,
         text: text.value,
       })
