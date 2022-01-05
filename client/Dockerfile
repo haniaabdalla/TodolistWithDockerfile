@@ -4,8 +4,7 @@ FROM node:latest as build
 
 # Set the working directory
 WORKDIR /app
-RUN chown -R root:$(whoami) /app
-RUN chmod -R 777 /app
+
 # Add the source code to app
 COPY ./ /app/
 COPY package*.json ./
@@ -21,6 +20,7 @@ RUN npm run build
 
 # Use official nginx image as the base image
 FROM nginx:latest
-
+RUN chown -R root:$(whoami) /var/cache/nginx
+RUN chmod -R 777 /var/cache/nginx
 # Copy the build output to replace the default nginx contents.
-COPY --from=build /usr/local/app/dist/client-angular /usr/share/nginx/html
+COPY --from=build /app/dist/client-angular /usr/share/nginx/html
