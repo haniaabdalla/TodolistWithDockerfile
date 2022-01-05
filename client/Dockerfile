@@ -3,11 +3,11 @@
 FROM node:latest as build
 
 # Set the working directory
-WORKDIR /usr/local/app
-RUN chown -R root:$(whoami) /usr/local/app
-RUN chmod -R 777 /usr/local/app
+WORKDIR /app
+RUN chown -R root:$(whoami) /app
+RUN chmod -R 777 /app
 # Add the source code to app
-COPY ./ /usr/local/app/
+COPY ./ /app/
 COPY package*.json ./
 
 # Install all the dependencies
