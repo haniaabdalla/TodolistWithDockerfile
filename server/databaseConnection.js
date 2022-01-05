@@ -4,7 +4,7 @@ const DataBaseconnection = async() => {
 
     //var dburl=mongoose.connect('mongodb://hania:omar@'+process.env.IP+':27017/dbtodos?directConnection=true&serverSelectionTimeoutMS=2000')
     await mongoose.connect(
-        'mongodb://hania:omar@'+process.env.IP+':27017/dbtodos?directConnection=true&serverSelectionTimeoutMS=2000', {
+        'mongodb://hania:omar@'+process.env.MONGODB_SERVICE_HOST+':27017/dbtodos?directConnection=true&serverSelectionTimeoutMS=2000', {
             useNewUrlParser: true,
             useCreateIndex: true,
             useUnifiedTopology: true,
