@@ -1,4 +1,2 @@
 # todolist
-"# todolist" 
-"# todolist" 
-"# phase3" 
+MEAN Todolist with Dockerfiles 
